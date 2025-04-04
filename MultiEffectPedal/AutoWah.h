@@ -1,15 +1,13 @@
 #include "DaisyDuino.h"
 
-class PitchShift {
+class AutoWah {
   public:
-    PitchShift() {}
-    ~PitchShift() {}
+    AutoWah() {}
+    ~AutoWah() {}
 
     void Initialize(float sample_rate);
     float Process(float input);
 
   private:
-    PitchShifter pitch;
-    Metro tick;
-    float transpose;
+    Autowah wah; 
 };

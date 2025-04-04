@@ -12,7 +12,8 @@ Multi-Effect Suite includes:
 - Matter Compressor
 - Reverb
 - Pitch Shifter
-
+- USPS Delay
+- Auto Wah
 
 ## Installation
 
@@ -25,3 +26,9 @@ Multi-Effect Suite includes:
 - Upload Method: STM32CubeProgrammer (DFU)
 - USB support (if available): CDC (generic 'Serial' supercede U(S)ART)
 4. Upload code to Daisy Seed via Micro USB
+
+## Important Links
+
+- Audio Effects Explained: https://www.masteringbox.com/learn/audio-effects
+- DaisyDuino/DaisySP Documentation: https://daisy.audio/DaisySP/Classes/ 
+- Daisy Seed Datasheet: https://daisy.nyc3.cdn.digitaloceanspaces.com/products/seed/Daisy_Seed_datasheet_v1-1-5.pdf 
