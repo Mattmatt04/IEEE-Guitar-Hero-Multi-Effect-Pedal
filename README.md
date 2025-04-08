@@ -12,8 +12,9 @@ Multi-Effect Suite includes:
 - Matter Compressor
 - Reverb
 - Pitch Shifter
-- USPS Delay
+- USPS Delay (Basic, Ping-Pong, and Panning)
 - Auto Wah
+- Phaser
 
 ## Installation
 
