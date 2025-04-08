@@ -6,6 +6,7 @@
 #include "PitchShift.h"
 #include "USPSDelay.h"
 #include "AutoWah.h"
+#include "Phasor.h"
 
 using namespace std;
 
@@ -26,6 +27,7 @@ AntiMatterCompressor DSY_SDRAM_BSS AMComp;
 MatterCompressor DSY_SDRAM_BSS MComp;
 Reverb DSY_SDRAM_BSS Rev;
 AutoWah DSY_SDRAM_BSS AWah;
+Lazor DSY_SDRAM_BSS Phase;
 
 // Does not work on DSY_SDRAM_BSS
 PitchShift PShift;
@@ -59,10 +61,13 @@ void MyCallback(float **in, float **out, size_t size) {
           outL = outR = PShift.Process(sig);
           break;
         case 5:
-          outL = outR = USPS.Process(sig);
+          USPS.Process(sig, &outL, &outR, 1);
           break;
         case 6:
           outL = outR = AWah.Process(sig);
+          break;
+        case 7:
+          outL = outR = Phase.Process(sig);
           break;
       }
     }
@@ -91,6 +96,7 @@ void setup() {
   PShift.Initialize(sample_rate);
   USPS.Initialize(sample_rate);
   AWah.Initialize(sample_rate);
+  Phase.Initialize(sample_rate, 4);
 
   Serial.begin(9600);
   button.Init(1000, false, 28, INPUT_PULLUP);
